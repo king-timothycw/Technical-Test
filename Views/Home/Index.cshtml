@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    var productCount = ProductDal.CountProducts();
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>We have @productCount products!</p>
+</div>
