@@ -1,4 +1,3 @@
-/// <binding ProjectOpened='Watch - Development' />
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
