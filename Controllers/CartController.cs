@@ -25,5 +25,11 @@ namespace TechnicalTest.Controllers
         {
             CartDal.RemoveProduct(productId);
         }
+
+        public IActionResult RemoveFromCart(int productId)
+        {
+            RemoveProduct(productId);
+            return RedirectToAction("Index");
+        }
     }
 }

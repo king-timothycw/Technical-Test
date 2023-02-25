@@ -5,5 +5,18 @@
 
 <h3>You have @Model.Length items in your cart</h3>
 
-@* //TODO: Show items in the cart *@
-@* //TODO: Add a remove link to the cart *@
+@foreach (var product in Model)
+{
+    var linkId = $"remove{product.ProductId}";
+    <div>
+        <span style="display:flex">
+            <span>@product.Title</span>
+            @using (Html.BeginForm("RemoveFromCart", "Cart", new { productId = product.ProductId }, FormMethod.Post, false, new { id = linkId }))
+            {
+                <a href=@($"javascript:document.getElementById({linkId}).submit()")>
+                    <input type="submit" value="Remove from cart" style="border:0;padding-top:0;padding-bottom:o;background-color:transparent;color:blue" />
+                </a>
+            }
+        </span>
+    </div>
+}
