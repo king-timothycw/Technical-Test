@@ -17,12 +17,14 @@ namespace TechnicalTest.Data
 
         public static void AddProduct(int productId)
         {
-            // TODO: Add product to _database
+            // Add product to _database
+            _database.Add(ProductDal.GetProducts().First(p => p.ProductId == productId));
         }
 
         public static void RemoveProduct(int productId)
         {
-            // TODO: Remove product from _database
+            // Remove product from _database
+            _database.Remove(ProductDal.GetProducts().First(p => p.ProductId == productId));
         }
     }
 }

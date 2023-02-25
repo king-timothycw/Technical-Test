@@ -20,9 +20,20 @@ export function ProductListApp() {
           <div key={p.productId} className="list-group-item">
             <h4>{p.title}</h4>
             <p>{p.description}</p>
-            {/**
-             * // TODO: Add to cart button form
-             */}
+            {
+              /**
+               * // TODO: Add to cart button form
+               */
+              <form
+                onSubmit={() =>
+                  fetch(`/Cart/AddProduct?productId=${p.productId}`, {
+                    method: "POST"
+                  })
+                }
+              >
+                <button type="submit">Add to cart</button>
+              </form>
+            }
           </div>
         ))}
       </div>
